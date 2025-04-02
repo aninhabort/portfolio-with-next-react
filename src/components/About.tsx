@@ -7,7 +7,7 @@ const About = () => {
       <div className="p-2.5">
         <h1 className="font-bold text-3xl">About me</h1>
         <p className="py-2.5">
-          Hey, I'm Ana Carolina! I’m a{" "}
+          Hey, I&apos;m Ana Carolina! I’m a{" "}
           <strong className="text-purple-400">frontend developer</strong> with
           one year of experience building web applications with React.js and
           TypeScript. I love writing clean, maintainable, and scalable code.
@@ -18,7 +18,7 @@ const About = () => {
           development.
         </p>
         <p>
-          I'm always learning and exploring new technologies to build better,
+          I&apos;m always learning and exploring new technologies to build better,
           more efficient solutions.
         </p>
       </div>

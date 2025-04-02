@@ -60,7 +60,7 @@ const Contacts = () => {
 
       <div className="p-2 text-white">
         <p className="text-sm pb-3">
-          I'm always open to discussing{" "}
+          I&apos;m always open to discussing{" "}
           <strong className="text-purple-400">new projects</strong>,{" "}
           <strong className="text-purple-400">opportunities in the tech world</strong>{" "}
           and more.
