@@ -5,7 +5,7 @@ const Header = () => {
   // const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="flex justify-between pl-6">
+    <div className="flex justify-between pl-6 max-sm:pl-0">
       <h3 className="font-bold">
         Ana Carolina <strong className="text-purple-600">Magalhães</strong>
       </h3>

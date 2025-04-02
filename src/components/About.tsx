@@ -2,7 +2,7 @@ import { CodeSimple, DeviceMobile, Palette } from "@phosphor-icons/react";
 
 const About = () => {
   return (
-    <div className="flex flex-col bg-neutral-700 p-4 md:px-8 mr-6 rounded-lg w-fit h-auto">
+    <div className="flex flex-col bg-neutral-700 p-2 max-sm:px-8 mr-6 max-sm:m-6 rounded-lg shadow-md w-full max-sm:w-auto h-auto">
       {/* About Me */}
       <div className="p-2.5">
         <h1 className="font-bold text-3xl">About me</h1>

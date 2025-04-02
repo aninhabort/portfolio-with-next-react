@@ -1,9 +1,9 @@
 const Resume = () => {
   return (
-    <div className="flex flex-col bg-neutral-700 p-6 mr-6 rounded-lg w-full h-auto">
+    <div className="flex flex-col bg-neutral-700 p-4 max-sm:px-8 mr-6 max-sm:m-6 rounded-lg shadow-md w-full max-sm:w-auto h-auto">
       <h1 className="font-bold text-3xl pb-2">Resume</h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-6">
         {/* Educação */}
         <div className="w-full">
           <h2 className="font-medium text-2xl pb-2.5">Education</h2>

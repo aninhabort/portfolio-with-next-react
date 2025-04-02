@@ -7,14 +7,14 @@ import {
   MediumLogo,
 } from "@phosphor-icons/react";
 import Link from "next/link";
-import Profile from "../../public/profile.png";
 import Image from "next/image";
+import Profile from "../../public/profile.png"
 
 const Infos = () => {
   return (
-    <div className="flex flex-col items-center gap-1 bg-neutral-700 p-4 ml-6 rounded-lg w-auto h-fit">
+    <div className="flex flex-col justify-evenly items-center gap-1 bg-neutral-700 p-4 ml-6 max-sm:m-6 rounded-lg w-auto h-auto">
       <Image
-        className="absolute top-30 rounded-lg"
+        className="absolute top-30 max-sm:mt-2 rounded-lg"
         src={Profile}
         alt="My profile"
         width={180}

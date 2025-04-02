@@ -47,10 +47,10 @@ export default function Page() {
 
   return (
     <div className="align-middle pb-6">
-      <div className="flex justify-between pt-6 mr-6">
+      <div className="max-sm:top-0 flex max-sm:flex-col max-sm:gap-2 justify-between pt-6 mr-6 max-sm:ml-6">
         <Header />
 
-        <div className="flex flex-row items-center gap-3 bg-neutral-700 p-2 rounded-lg">
+        <div className="max-sm:hidden flex flex-row items-center gap-3 bg-neutral-700 p-2 rounded-lg">
           {[
             {
               type: PageType.ABOUT,
@@ -91,8 +91,48 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-7 pt-30">
+      <div className="flex flex-row max-sm:flex-col gap-7 max-sm:gap-0.5 pt-30 max-sm:mt-10">
         <Infos />
+
+        <div className="max-sm:visible min-md:hidden flex flex-row justify-evenly items-center bg-neutral-700 p-2 ml-6 mr-6 mt-1 mb-1 rounded-lg">
+          {[
+            {
+              type: PageType.ABOUT,
+              icon: <House size={20} />,
+              label: "Home",
+              link: "/",
+            },
+            {
+              type: PageType.RESUME,
+              icon: <Article size={20} />,
+              label: "Resume",
+              link: "/#resume",
+            },
+            {
+              type: PageType.PROJECTS,
+              icon: <BagSimple size={20} />,
+              label: "Projects",
+              link: "/#projects",
+            },
+            {
+              type: PageType.CONTACTS,
+              icon: <AddressBook size={20} />,
+              label: "Contacts",
+              link: "/#contacts",
+            },
+          ].map(({ type, icon, label, link }) => (
+            <div
+              key={type}
+              className={`flex flex-col items-center justify-center gap-1 w-20 min-w-[80px] p-2 text-sm text-center cursor-pointer rounded-lg transition-all ${
+                currentPage === type ? "bg-purple-600" : "hover:bg-neutral-600"
+              }`}
+              onClick={() => handleNavigation(type, link)}
+            >
+              {icon}
+              <p>{label}</p>
+            </div>
+          ))}
+        </div>
 
         {pages[currentPage]}
       </div>
