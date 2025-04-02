@@ -9,6 +9,7 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 import Profile from "../../public/profile.png"
+import { FigmaLogo } from "phosphor-react";
 
 const Infos = () => {
   return (
@@ -41,6 +42,12 @@ const Infos = () => {
           href="https://dribbble.com/aninhabort"
         >
           <DribbbleLogo size={24} />
+        </Link>
+        <Link
+          className="bg-purple-600 rounded-lg p-1 hover:bg-purple-800"
+          href="https://www.figma.com/@anabmagalhaes"
+        >
+          <FigmaLogo size={24} />
         </Link>
         <Link
           className="bg-purple-600 rounded-lg p-1 hover:bg-purple-800"

@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Metadata } from "next/dist/types";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,8 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ana Carolina Magalhães",
-  description: "Ana Carolina Magalhães Portfolio",
+  title: "Ana C Magalhães",
 };
 
 export default function RootLayout({
@@ -24,6 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" type="image/svg+xml" href="/logo.png" />
+      </head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
