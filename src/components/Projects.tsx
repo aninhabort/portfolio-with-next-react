@@ -9,7 +9,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="flex flex-col bg-neutral-700 p-4 max-sm:px-8 mr-6 max-sm:m-6 rounded-lg shadow-md w-full max-sm:w-auto h-auto">
+    <div className="flex flex-col bg-neutral-700 p-4 max-sm:px-8 rounded-lg shadow-md w-full max-sm:w-auto h-auto">
       <h1 className="font-bold text-3xl pb-2">Projects</h1>
 
       <div className="grid grid-cols-1 max-sm:grid-cols-2 lg:grid-cols-3 gap-5">

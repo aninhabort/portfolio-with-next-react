@@ -13,15 +13,15 @@ import { FigmaLogo } from "phosphor-react";
 
 const Infos = () => {
   return (
-    <div className="flex flex-col justify-evenly items-center gap-1 bg-neutral-700 p-4 ml-6 max-sm:m-6 rounded-lg w-auto h-auto">
+    <div className="flex flex-col justify-evenly items-center gap-1 bg-neutral-700 p-4 rounded-lg w-auto h-auto">
       <Image
-        className="absolute top-30 max-sm:mt-2 rounded-lg"
+        className="absolute top-36 max-sm:top-28 rounded-lg"
         src={Profile}
         alt="My profile"
-        width={180}
+        width={160}
       />
 
-      <h1 className="pt-18 font-bold text-xl">Ana Carolina Magalhães</h1>
+      <h1 className="pt-18 font-bold text-xl text-center">Ana Carolina Bortolini de Magalhães</h1>
       <p className="font-medium text-lg text-gray-400">Frontend Developer</p>
 
       <div className="flex align-middle gap-2.5 pt-2.5 pb-2.5">

@@ -5,9 +5,9 @@ const Header = () => {
   // const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="flex justify-between pl-6 max-sm:pl-0">
+    <div className="flex justify-between">
       <h3 className="font-bold">
-        Ana Carolina <strong className="text-purple-600">Magalhães</strong>
+        Ana Carolina <strong className="text-purple-600">B. de Magalhães</strong>
       </h3>
       {/* <div>
         {theme === "light" ? (

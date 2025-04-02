@@ -46,10 +46,10 @@ export default function Page() {
   }, []);
 
   return (
-    <div className="align-middle pb-6">
-      <div className="max-sm:top-0 flex max-sm:flex-col max-sm:gap-2 justify-between pt-6 mr-6 max-sm:ml-6">
-        <Header />
-
+    <div className="align-middle p-6">
+      <Header />
+      
+      <div className="max-sm:top-0 flex max-sm:flex-col max-sm:gap-2 justify-end pt-20 max-sm:ml-6">
         <div className="max-sm:hidden flex flex-row items-center gap-3 bg-neutral-700 p-2 rounded-lg">
           {[
             {
@@ -91,10 +91,10 @@ export default function Page() {
         </div>
       </div>
 
-      <div className="flex flex-row max-sm:flex-col gap-7 max-sm:gap-0.5 pt-30 max-sm:mt-10">
+      <div className="flex flex-row max-sm:flex-col gap-7 max-sm:gap-3 pt-5 max-sm:mt-10">
         <Infos />
 
-        <div className="max-sm:visible min-md:hidden flex flex-row justify-evenly items-center bg-neutral-700 p-2 ml-6 mr-6 mt-1 mb-1 rounded-lg">
+        <div className="max-sm:visible min-md:hidden flex flex-row justify-evenly items-center bg-neutral-700 p-2 mt-1 mb-1 rounded-lg">
           {[
             {
               type: PageType.ABOUT,
