@@ -13,9 +13,9 @@ import { FigmaLogo } from "phosphor-react";
 
 const Infos = () => {
   return (
-    <div className="flex flex-col justify-evenly items-center gap-1 bg-neutral-700 p-4 rounded-lg w-auto h-auto">
+    <div className="flex flex-col items-center gap-1 bg-neutral-700 p-4 rounded-lg w-auto h-auto">
       <Image
-        className="absolute top-36 max-sm:top-28 rounded-lg"
+        className="absolute top-32 max-sm:top-24 rounded-lg"
         src={Profile}
         alt="My profile"
         width={160}

@@ -49,7 +49,7 @@ export default function Page() {
     <div className="align-middle p-6">
       <Header />
       
-      <div className="max-sm:top-0 flex max-sm:flex-col max-sm:gap-2 justify-end pt-20 max-sm:ml-6">
+      <div className="max-sm:top-0 flex max-sm:flex-col max-sm:gap-2 justify-end pt-16 max-sm:ml-6">
         <div className="max-sm:hidden flex flex-row items-center gap-3 bg-neutral-700 p-2 rounded-lg">
           {[
             {
