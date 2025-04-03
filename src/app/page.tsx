@@ -62,19 +62,19 @@ export default function Page() {
               type: PageType.RESUME,
               icon: <Article size={20} />,
               label: "Resume",
-              link: "/#resume",
+              link: "/resume",
             },
             {
               type: PageType.PROJECTS,
               icon: <BagSimple size={20} />,
               label: "Projects",
-              link: "/#projects",
+              link: "/projects",
             },
             {
               type: PageType.CONTACTS,
               icon: <AddressBook size={20} />,
               label: "Contacts",
-              link: "/#contacts",
+              link: "/contacts",
             },
           ].map(({ type, icon, label, link }) => (
             <div
