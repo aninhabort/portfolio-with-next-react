@@ -7,8 +7,7 @@ const About = () => {
       <div className="p-2.5">
         <h1 className="font-bold text-3xl">About me</h1>
         <p className="py-2.5">
-          Hey, I&apos;m Ana Carolina! I’m a{" "}
-          <strong className="text-purple-400">frontend developer</strong> with
+          Hey, I&apos;m Ana Carolina! I’m a frontend developer with
           one year of experience building web applications with React.js and
           TypeScript. I love writing clean, maintainable, and scalable code.
         </p>

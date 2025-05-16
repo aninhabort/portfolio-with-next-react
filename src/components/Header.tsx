@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div className="flex justify-between">
       <h3 className="font-bold">
-        Ana Carolina <strong className="text-purple-600">B. de Magalhães</strong>
+        Ana Carolina <strong className="text-purple-500">B. de Magalhães</strong>
       </h3>
       {/* <div>
         {theme === "light" ? (
