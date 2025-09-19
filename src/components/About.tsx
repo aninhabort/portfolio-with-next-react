@@ -7,18 +7,18 @@ const About = () => {
       <div className="p-2.5">
         <h1 className="font-bold text-3xl">About me</h1>
         <p className="py-2.5">
-          Hey, I&apos;m Ana Carolina! I’m a frontend developer with
-          one year of experience building web applications with React.js and
-          TypeScript. I love writing clean, maintainable, and scalable code.
+          Hey, I&apos;m Ana Carolina! I&apos;m a Frontend Developer & Aspiring UX/UI
+          Designer with a solid background in creating responsive web
+          applications using React.js and TypeScript. I am transitioning my
+          career from Architecture and Urbanism to technology, bringing with me
+          a strong foundation in project management and problem-solving.
         </p>
         <p className="py-3">
-          I have a background in Architecture and Urbanism, which sharpened my
-          problem-solving and project management skills—now, I apply them to
-          development.
-        </p>
-        <p>
-          I&apos;m always learning and exploring new technologies to build better,
-          more efficient solutions.
+          My professional experience includes analyzing user behavior to improve
+          usability and conversion rates, as well as developing scalable and
+          user-friendly interfaces. I am passionate about creating products that
+          are not only technically robust but also offer an exceptional user
+          experience.
         </p>
       </div>
 

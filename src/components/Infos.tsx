@@ -22,7 +22,7 @@ const Infos = () => {
       />
 
       <h1 className="pt-18 font-bold text-xl text-center">Ana Carolina Bortolini de Magalhães</h1>
-      <p className="font-medium text-lg text-gray-300">Frontend Developer</p>
+      <p className="font-medium text-lg text-gray-300">Frontend Developer | UX/UI</p>
 
       <div className="flex align-middle gap-2.5 pt-2.5 pb-2.5">
         <Link
@@ -72,7 +72,7 @@ const Infos = () => {
         <p className="text-black">Coimbra, Portugal</p>
       </div>
 
-      <a href="/Ana-Carolina-Resume.pdf" download="Ana Carolina's Resume" target="_blank">
+      <a href="/CV-of-Ana-Carolina.pdf" download="Ana Carolina's Resume" target="_blank">
         <button
           className="flex flex-row gap-1 bg-purple-600 rounded-full px-2.5 py-2.5 mt-2 hover:bg-purple-800"
           type="button"

@@ -20,7 +20,7 @@ const Projects = () => {
           >
             <p className="text-gray-600">{category}</p>
             <p className="text-black">{name}</p>
-            <a className="text-purple-600 underline" href={url}>Link of the project</a>
+            <a className="text-purple-600 underline" href={url} target="_blank">Link of the project</a>
           </div>
         ))}
       </div>
