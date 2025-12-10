@@ -1,21 +1,33 @@
 import { useState, useEffect } from "react";
 
 export function useTheme() {
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("theme") || "light";
-    }
-    return "light";
-  });
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", theme === "dark");
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+    setMounted(true);
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else {
+      // Detecta preferência do sistema
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      setTheme(prefersDark ? "dark" : "light");
+    }
+  }, []);
+
+  useEffect(() => {
+    if (mounted) {
+      const root = document.documentElement;
+      root.classList.remove("light", "dark");
+      root.classList.add(theme);
+      localStorage.setItem("theme", theme);
+    }
+  }, [theme, mounted]);
 
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
+    setTheme(prevTheme => prevTheme === "light" ? "dark" : "light");
   };
 
-  return { theme, toggleTheme };
+  return { theme, toggleTheme, mounted };
 }
