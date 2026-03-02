@@ -1,4 +1,5 @@
 import { ComponentType } from "react";
+import { StaticImageData } from "next/image";
 import {
   IconProps,
   DribbbleLogo,
@@ -23,7 +24,7 @@ export interface FeaturedProject {
   liveUrl: string;
   codeUrl: string;
   accent: string;
-  previewImage?: string;
+  previewImage?: string | StaticImageData;
 }
 
 export interface ContentCard {
