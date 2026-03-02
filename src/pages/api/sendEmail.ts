@@ -8,14 +8,27 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
-    const { name, email, message } = req.body;
+    const { name, email, subject, message } = req.body;
+
+    const trimmedSubject = typeof subject === "string" ? subject.trim() : "";
+    const emailSubject = trimmedSubject
+      ? `${trimmedSubject} — ${name}`
+      : `Nova mensagem de ${name}`;
+    const emailBody = [
+      `Mensagem de: ${name}`,
+      `E-mail: ${email}`,
+      trimmedSubject ? `Assunto: ${trimmedSubject}` : undefined,
+      `Mensagem: ${message}`,
+    ]
+      .filter(Boolean)
+      .join("\n");
 
     try {
       const response = await resend.emails.send({
         from: "onboarding@resend.dev",
         to: 'carol2015bortolini@gmail.com',
-        subject: `Nova mensagem de ${name}`,
-        text: `Mensagem de: ${name}\nE-mail: ${email}\nMensagem: ${message}`,
+        subject: emailSubject,
+        text: emailBody,
       });
 
       res

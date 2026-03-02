@@ -2,64 +2,50 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --radius: 0.5rem;
-    
-    --bg-color: #f5f5f5;
-    --text-color: #1a1a1a;
-    --color-background: var(--bg-color);
-    --color-foreground: var(--text-color);
-    --font-sans: var(--font-geist-sans);
-    --font-mono: var(--font-geist-mono);
+    --page-bg: #05080f;
+    --page-bg-alt: #0c1723;
+    --page-panel: #0f1926;
+    --page-card: #121f2f;
+    --page-border: rgba(226, 232, 240, 0.08);
+    --page-text: #e4ecff;
+    --page-muted: #8ea0c3;
+    --accent-cyan: #22d3ee;
+    --accent-cyan-strong: #5ef6ff;
+    --accent-purple: #7c3aed;
+    --font-sans: var(--font-body);
+    --font-display: var(--font-display);
   }
 
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    
-    --bg-color: #1c1c1c;
-    --text-color: #ededed;
+  * {
+    border-color: var(--page-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: var(--font-sans), Arial, Helvetica, sans-serif;
-    transition: background-color 0.2s, color 0.2s;
+    background: radial-gradient(circle at 10% 20%, rgba(19, 219, 255, 0.12), transparent 45%),
+      radial-gradient(circle at 80% 0%, rgba(124, 58, 237, 0.2), transparent 55%),
+      linear-gradient(135deg, var(--page-bg), var(--page-bg-alt));
+    color: var(--page-text);
+    font-family: var(--font-sans), "Sora", "Space Grotesk", system-ui;
+    min-height: 100vh;
+    background-attachment: fixed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display), "Space Grotesk", system-ui;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    color: #020617;
+    background: var(--accent-cyan);
   }
 }
