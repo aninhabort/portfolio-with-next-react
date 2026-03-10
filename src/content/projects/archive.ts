@@ -30,7 +30,7 @@ export const PROJECT_ARCHIVE: ProjectArchiveEntry[] = [
     gradient: "from-[#f472b6]/30 via-[#facc15]/10 to-transparent",
     designUrl: "https://www.figma.com/community/file/1480973290003426198",
     previewImage: pokedexPreview,
-    liveUrl: "https://ana-pokedex.vercel.app/",
+    liveUrl: "https://ana-pokedex.netlify.app/",
     codeUrl: "https://github.com/aninhabort/pokedex",
   },
   {
