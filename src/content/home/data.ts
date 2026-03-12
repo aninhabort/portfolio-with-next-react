@@ -121,7 +121,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = FEATURED_TITLES.map((title) 
     tags: project.tags,
     liveUrl: project.liveUrl ?? project.designUrl ?? project.codeUrl,
     codeUrl: project.codeUrl ?? project.designUrl ?? project.liveUrl ?? "#",
-    accent: project.gradient,
+    accent: project.gradient ?? "from-[#d7d2cd] via-[#ece8e4] to-[#f5f3f1]",
     previewImage: project.previewImage,
   }));
 
