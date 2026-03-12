@@ -101,7 +101,7 @@ export default function ProjectsPage() {
               key={project.title}
               className="flex h-full flex-col rounded-[28px] border border-black/5 bg-[#f5f3f1] p-6 shadow-sm transition hover:-translate-y-1 hover:border-black/20"
             >
-              <div className="relative mb-5 h-48 overflow-hidden rounded-2xl border border-black/10">
+              <div className="relative mb-6 h-48 overflow-hidden rounded-2xl border border-black/10">
                 {project.previewImage ? (
                   <Image
                     src={project.previewImage}
@@ -124,10 +124,10 @@ export default function ProjectsPage() {
                   </span>
                 ))}
               </div>
-              <div className="mt-4 flex-1">
+              <div className="mt-5 flex-1">
                 <p className="text-xs uppercase tracking-[0.4em] text-[#6b6b6b]">{project.category}</p>
-                <h3 className="mt-2 text-2xl font-semibold text-[#2d2d2d]">{project.title}</h3>
-                <p className="mt-2 text-sm text-[#6b6b6b]">{project.description}</p>
+                <h3 className="mt-1 text-2xl font-semibold text-[#2d2d2d]">{project.title}</h3>
+                <p className="mt-3 text-sm text-[#6b6b6b]">{project.description}</p>
               </div>
               <div className="mt-6 flex flex-wrap gap-4 text-sm font-semibold">
                 {project.liveUrl && (

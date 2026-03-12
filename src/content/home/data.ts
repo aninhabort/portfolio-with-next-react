@@ -42,8 +42,6 @@ export interface SocialLink {
   icon: ComponentType<IconProps>;
 }
 
-const FEATURED_TITLES = ["Pokedex", "Pokeball Animated", "To-Do List App"] as const;
-
 const SKILLS = [
   "Figma",
   "Product Design",
@@ -110,12 +108,8 @@ export const NAV_LINKS: NavLink[] = [
   { href: "#contact", label: "Contact" },
 ];
 
-export const FEATURED_PROJECTS: FeaturedProject[] = FEATURED_TITLES.map((title) =>
-  PROJECT_ARCHIVE.find((project) => project.title === title)
-)
-  .filter((project): project is (typeof PROJECT_ARCHIVE)[number] => Boolean(project))
-  .map((project) => ({
-    title: project.title,
+export const FEATURED_PROJECTS: FeaturedProject[] = PROJECT_ARCHIVE.map((project) => ({
+  title: project.title,
     category: project.category,
     description: project.description,
     tags: project.tags,
@@ -123,7 +117,7 @@ export const FEATURED_PROJECTS: FeaturedProject[] = FEATURED_TITLES.map((title) 
     codeUrl: project.codeUrl ?? project.designUrl ?? project.liveUrl ?? "#",
     accent: project.gradient ?? "from-[#d7d2cd] via-[#ece8e4] to-[#f5f3f1]",
     previewImage: project.previewImage,
-  }));
+  })).slice(0, 3);
 
 export const HERO_STATS = [
   { label: "Years Building", value: "02" },
