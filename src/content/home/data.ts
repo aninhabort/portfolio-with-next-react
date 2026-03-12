@@ -141,7 +141,7 @@ export const CONTENT_CARDS: ContentCard[] = [
     description: "Bite-sized tutorials, technical deep dives, and practical insights focused on software engineering.",
     handle: "@neo.coders",
     href: instagramLink?.href ?? "https://www.instagram.com/neo.coders/",
-    accent: "border-cyan-400/60",
+    accent: "border-black/10 hover:border-black/20",
     icon: instagramLink?.icon ?? InstagramLogo,
   },
   {
@@ -149,7 +149,7 @@ export const CONTENT_CARDS: ContentCard[] = [
     description: "UI design case studies for web and mobile, motion prototypes, and visual explorations straight from my Figma files.",
     handle: "@aninhabort",
     href: dribbbleLink?.href ?? "https://dribbble.com/aninhabort",
-    accent: "border-purple-400/60",
+    accent: "border-black/10 hover:border-black/20",
     icon: dribbbleLink?.icon ?? DribbbleLogo,
   },
 ];

@@ -2,16 +2,16 @@
 
 @layer base {
   :root {
-    --page-bg: #05080f;
-    --page-bg-alt: #0c1723;
-    --page-panel: #0f1926;
-    --page-card: #121f2f;
-    --page-border: rgba(226, 232, 240, 0.08);
-    --page-text: #e4ecff;
-    --page-muted: #8ea0c3;
-    --accent-cyan: #22d3ee;
-    --accent-cyan-strong: #5ef6ff;
-    --accent-purple: #7c3aed;
+    --page-bg: #e5e1dd;
+    --page-bg-alt: #f5f3f1;
+    --page-panel: #f5f3f1;
+    --page-card: #f5f3f1;
+    --page-border: rgba(0, 0, 0, 0.05);
+    --page-text: #2d2d2d;
+    --page-muted: #6b6b6b;
+    --accent-cyan: #1a1a1a;
+    --accent-cyan-strong: #2d2d2d;
+    --accent-purple: #1a1a1a;
     --font-sans: var(--font-body);
     --font-display: var(--font-display);
   }
@@ -25,13 +25,13 @@
   }
 
   body {
-    background: radial-gradient(circle at 10% 20%, rgba(19, 219, 255, 0.12), transparent 45%),
-      radial-gradient(circle at 80% 0%, rgba(124, 58, 237, 0.2), transparent 55%),
-      linear-gradient(135deg, var(--page-bg), var(--page-bg-alt));
+    background: linear-gradient(140deg, var(--page-bg) 0%, var(--page-bg-alt) 100%);
     color: var(--page-text);
     font-family: var(--font-sans), "Sora", "Space Grotesk", system-ui;
     min-height: 100vh;
     background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1,
@@ -41,11 +41,11 @@
   h5,
   h6 {
     font-family: var(--font-display), "Space Grotesk", system-ui;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.018em;
   }
 
   ::selection {
-    color: #020617;
+    color: #f5f3f1;
     background: var(--accent-cyan);
   }
 }
