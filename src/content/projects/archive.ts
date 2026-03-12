@@ -5,6 +5,7 @@ import todoPreview from "@/content/assets/todo.png";
 import ghibliAppPreview from "@/content/assets/ghibli-app.png";
 import ghibliApiPreview from "@/content/assets/ghibli-api.png";
 import weatherPreview from "@/content/assets/weather.png";
+import naturalBeautyPreview from "@/content/assets/natural-beauty.png";
 
 export interface ProjectArchiveEntry {
   title: string;
@@ -18,9 +19,20 @@ export interface ProjectArchiveEntry {
   codeUrl: string;
 }
 
-export const PROJECT_FILTERS = ["All", "Product Design", "Web Apps", "Mobile", "APIs"];
+export const PROJECT_FILTERS = ["All", "Product Design", "Branding", "Web Apps", "Mobile", "APIs"];
 
 export const PROJECT_ARCHIVE: ProjectArchiveEntry[] = [
+  {
+    title: "Natural Beauty: Social Media Brand Study",
+    description:
+      "A visual identity and social media design system for a fictional skincare brand. The project focuses on a 'cozy-minimalist' aesthetic, utilizing grid-based layouts and a curated typography system to create a cohesive brand experience across digital touchpoints.",
+    tags: ["Visual Identity", "Social Media Design", "UI/UX", "Branding", "Figma"],
+    category: "Branding",
+    designUrl: "https://dribbble.com/shots/27176986-Natural-Beauty-Social-Media-Brand-Study?utm_source=Clipboard_Shot&utm_campaign=aninhabort&utm_content=Natural%20Beauty%20%E2%80%94%20Social%20Media%20Brand%20Study&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=aninhabort&utm_content=Natural%20Beauty%20%E2%80%94%20Social%20Media%20Brand%20Study&utm_medium=Social_Share",
+    previewImage: naturalBeautyPreview,
+    liveUrl: "",
+    codeUrl: ""
+  },
   {
     title: "Pokedex",
     description:
