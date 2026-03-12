@@ -45,14 +45,16 @@ export interface SocialLink {
 const FEATURED_TITLES = ["Pokedex", "Pokeball Animated", "To-Do List App"] as const;
 
 const SKILLS = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
   "Figma",
+  "Product Design",
+  "UX/UI Design",
+  "Design Systems",
+  "React",
+  "TypeScript",
+  "Vue.js",
   "Next.js",
-  "SwiftUI",
+  "Tailwind CSS",
+  "Responsive Design",
 ];
 
 const CONTACT_INFO = {
@@ -157,7 +159,7 @@ export const CONTACT_SUMMARY = {
   location: CONTACT_INFO.location,
 };
 
-const SOCIAL_LABELS = new Set(["LinkedIn", "GitHub", "Dribbble", "Medium"]);
+const SOCIAL_LABELS = new Set(["LinkedIn", "GitHub", "Dribbble", "Figma", "Medium"]);
 
 export const SOCIALS: SocialLink[] = SOCIAL_DIRECTORY.filter((link) => SOCIAL_LABELS.has(link.label)).map((link) => ({
   href: link.href,

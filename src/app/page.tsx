@@ -118,7 +118,7 @@ export default function Page() {
               href="#contact"
               className="rounded-full bg-cyan-400 px-5 py-2 text-sm font-semibold text-slate-900 transition hover:bg-cyan-300"
             >
-              Let&apos;s Talk
+              Get in Touch
             </Link>
           </div>
         </div>
@@ -132,13 +132,13 @@ export default function Page() {
             </span>
             <div>
               <p className="text-sm uppercase tracking-[0.6em] text-slate-400">
-                Frontend Developer & UI Designer
+                Product Designer & Frontend Developer
               </p>
               <h1 className="mt-4 text-5xl font-bold leading-tight text-white sm:text-6xl">
                 Ana Carolina <span className="text-cyan-300">Magalhães</span>
               </h1>
               <p className="mt-6 text-lg text-slate-300">
-                I&apos;m a frontend developer and UI designer building expressive digital experiences while sharing tech insights & knowledge.
+                I&apos;m a Product Designer with a background in Architecture and experience in Frontend Development. I bridge the gap between design and code, creating functional and beautiful interfaces that are built to work.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -174,9 +174,9 @@ export default function Page() {
             <div className="relative flex h-full flex-col justify-between rounded-[20px] border border-white/5 bg-white/5 p-6">
               <div>
                 <p className="text-sm uppercase tracking-[0.4em] text-slate-400">Currently crafting</p>
-                <h3 className="mt-2 text-2xl font-semibold text-white">Playful UI systems</h3>
+                <h3 className="mt-2 text-2xl font-semibold text-white">User-centered digital products</h3>
                 <p className="mt-3 text-sm text-slate-300">
-                  Blending clean code with visual storytelling for brands that lead with personality.
+                  Bridging the gap between design and code to build scalable digital products.
                 </p>
               </div>
               <div className="relative mt-10 overflow-hidden rounded-2xl border border-white/10 bg-[#030712] p-4 shadow-xl">
@@ -197,7 +197,7 @@ export default function Page() {
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-sm uppercase tracking-[0.4em] text-cyan-200">Featured</p>
-              <h2 className="mt-2 text-4xl font-semibold text-white">Tech Projects</h2>
+              <h2 className="mt-2 text-4xl font-semibold text-white">Selected Projects</h2>
               <p className="mt-2 text-slate-300">
                 Selected web applications and open-source contributions designed for performance, scale, and user delight.
               </p>
