@@ -6,6 +6,8 @@ import ghibliAppPreview from "@/content/assets/ghibli-app.png";
 import ghibliApiPreview from "@/content/assets/ghibli-api.png";
 import weatherPreview from "@/content/assets/weather.png";
 import naturalBeautyPreview from "@/content/assets/natural-beauty.png";
+import velourCoffeeBrandingPreview from "@/content/assets/velour-coffee-branding.png";
+import velotraLandingPagePreview from "@/content/assets/velotra-landing-page.png";
 
 export interface ProjectArchiveEntry {
   title: string;
@@ -15,23 +17,39 @@ export interface ProjectArchiveEntry {
   gradient?: string;
   designUrl?: string;
   previewImage?: string | StaticImageData;
-  liveUrl: string;
-  codeUrl: string;
+  liveUrl?: string;
+  codeUrl?: string;
 }
 
 export const PROJECT_FILTERS = ["All", "Product Design", "Branding", "Web Apps", "Mobile", "APIs"];
 
 export const PROJECT_ARCHIVE: ProjectArchiveEntry[] = [
   {
+    title: "Velotra — Logistics Landing Page Design (Hero Section)",
+    description:
+      "A landing page design for a logistics company, featuring a clean and modern aesthetic with a focus on clear information hierarchy and user engagement.",
+    tags: ["Logistics", "Landing Page", "UI/UX", "Branding", "Figma"],
+    category: "Branding",
+    designUrl: "https://www.figma.com/community/file/1615437539529694523/velotra-logistics-landing-page-design-hero-section?q_id=db66195e-8455-4fa3-b9d2-be734fabbca2",
+    previewImage: velotraLandingPagePreview,
+  },
+  {
     title: "Natural Beauty: Social Media Brand Study",
     description:
       "A visual identity and social media design system for a fictional skincare brand. The project focuses on a 'cozy-minimalist' aesthetic, utilizing grid-based layouts and a curated typography system to create a cohesive brand experience across digital touchpoints.",
     tags: ["Visual Identity", "Social Media Design", "UI/UX", "Branding", "Figma"],
     category: "Branding",
-    designUrl: "https://dribbble.com/shots/27176986-Natural-Beauty-Social-Media-Brand-Study?utm_source=Clipboard_Shot&utm_campaign=aninhabort&utm_content=Natural%20Beauty%20%E2%80%94%20Social%20Media%20Brand%20Study&utm_medium=Social_Share&utm_source=Clipboard_Shot&utm_campaign=aninhabort&utm_content=Natural%20Beauty%20%E2%80%94%20Social%20Media%20Brand%20Study&utm_medium=Social_Share",
+    designUrl: "https://dribbble.com/shots/27176986-Natural-Beauty-Social-Media-Brand-Study",
     previewImage: naturalBeautyPreview,
-    liveUrl: "",
-    codeUrl: ""
+  },
+  {
+    title: "Velour Coffee: Brand Identity Design",
+    description:
+      "A comprehensive brand identity design for Velour Coffee, a specialty coffee roaster. The project includes logo design, color palette development, typography selection, and application of the brand across various touchpoints such as packaging and social media.",
+    tags: ["Brand Identity", "Logo Design", "Typography", "Color Theory", "Figma"],
+    category: "Branding",
+    designUrl: "https://dribbble.com/shots/27180787-Velour-Coffee-Brand-Identity-Design",
+    previewImage: velourCoffeeBrandingPreview,
   },
   {
     title: "Pokedex",
@@ -51,7 +69,6 @@ export const PROJECT_ARCHIVE: ProjectArchiveEntry[] = [
     tags: ["UX/UI Design", "SwiftUI", "iOS"],
     category: "Mobile",
     previewImage: todoPreview,
-    liveUrl: "",
     codeUrl: "https://github.com/aninhabort/todo-list-app",
   },
   {
@@ -91,7 +108,6 @@ export const PROJECT_ARCHIVE: ProjectArchiveEntry[] = [
     tags: ["Node.js", "Express", "Backend"],
     category: "APIs",
     previewImage: ghibliApiPreview,
-    liveUrl: "",
     codeUrl: "https://github.com/aninhabort/ghibli-movies-api",
   },
 ];

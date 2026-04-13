@@ -113,8 +113,9 @@ export const FEATURED_PROJECTS: FeaturedProject[] = PROJECT_ARCHIVE.map((project
     category: project.category,
     description: project.description,
     tags: project.tags,
-    liveUrl: project.liveUrl ?? project.designUrl ?? project.codeUrl,
-    codeUrl: project.codeUrl ?? project.designUrl ?? project.liveUrl ?? "#",
+    designUrl: project.designUrl,
+    liveUrl: project.liveUrl,
+    codeUrl: project.codeUrl,
     accent: project.gradient ?? "from-[#d7d2cd] via-[#ece8e4] to-[#f5f3f1]",
     previewImage: project.previewImage,
   })).slice(0, 3);
