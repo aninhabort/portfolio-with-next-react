@@ -1,5 +1,4 @@
 import { ComponentType } from "react";
-import { StaticImageData } from "next/image";
 import {
   IconProps,
   DribbbleLogo,
@@ -9,22 +8,11 @@ import {
   LinkedinLogo,
   MediumLogo,
 } from "@phosphor-icons/react";
-import { PROJECT_ARCHIVE } from "@/content/projects/archive";
+import { PROJECT_ARCHIVE, ProjectArchiveEntry } from "@/content/projects/archive";
 
 export interface NavLink {
   href: string;
   label: string;
-}
-
-export interface FeaturedProject {
-  title: string;
-  category: string;
-  description: string;
-  tags: string[];
-  liveUrl: string;
-  codeUrl: string;
-  accent: string;
-  previewImage?: string | StaticImageData;
 }
 
 export interface ContentCard {
@@ -108,17 +96,17 @@ export const NAV_LINKS: NavLink[] = [
   { href: "#contact", label: "Contact" },
 ];
 
-export const FEATURED_PROJECTS: FeaturedProject[] = PROJECT_ARCHIVE.map((project) => ({
+export const FEATURED_PROJECTS: ProjectArchiveEntry[] = PROJECT_ARCHIVE.map((project) => ({
   title: project.title,
-    category: project.category,
-    description: project.description,
-    tags: project.tags,
-    designUrl: project.designUrl,
-    liveUrl: project.liveUrl,
-    codeUrl: project.codeUrl,
-    accent: project.gradient ?? "from-[#d7d2cd] via-[#ece8e4] to-[#f5f3f1]",
-    previewImage: project.previewImage,
-  })).slice(0, 3);
+  category: project.category,
+  description: project.description,
+  tags: project.tags,
+  designUrl: project.designUrl,
+  liveUrl: project.liveUrl,
+  codeUrl: project.codeUrl,
+  gradient: project.gradient ?? "from-[#d7d2cd] via-[#ece8e4] to-[#f5f3f1]",
+  previewImage: project.previewImage,
+})).slice(0, 3);
 
 export const HERO_STATS = [
   { label: "Years Building", value: "02" },

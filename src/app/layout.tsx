@@ -1,6 +1,6 @@
 import { Metadata } from "next/dist/types";
 import { Space_Grotesk, Sora } from "next/font/google";
-import "./globals.css";
+import "./global.css";
 
 const displayFont = Space_Grotesk({
   variable: "--font-display",

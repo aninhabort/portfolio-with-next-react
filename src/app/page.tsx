@@ -13,6 +13,7 @@ import {
   NAV_LINKS,
   SOCIALS,
 } from "@/content/home/data";
+import { FigmaLogo, GithubLogo } from "phosphor-react";
 
 type FormStatus = "idle" | "loading" | "success" | "error" | "empty";
 
@@ -225,7 +226,7 @@ export default function Page() {
                       className="object-cover"
                     />
                   ) : (
-                    <div className={`h-full w-full bg-gradient-to-br ${project.accent}`}></div>
+                    <div className={`h-full w-full bg-gradient-to-br ${project.gradient}`}></div>
                   )}
                 </div>
                 <div className="flex flex-wrap gap-2">
@@ -243,25 +244,38 @@ export default function Page() {
                 <p className="mt-3 text-sm text-[#6b6b6b]">{project.description}</p>
                 <div className="mt-auto pt-5 flex flex-wrap items-center gap-4 text-sm font-semibold">
                   {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="flex items-center gap-2 text-[#1a1a1a] hover:text-[#2d2d2d]"
-                    >
-                      Live Demo
-                      <ArrowUpRight size={16} />
-                    </a>
-                  )}
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-2 text-[#1a1a1a] hover:text-[#2d2d2d]"
+                  >
+                    Live Demo
+                    <ArrowUpRight size={16} />
+                  </a>
+                )}
+                {project.codeUrl && (
                   <a
                     href={project.codeUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-2 text-[#6b6b6b] hover:text-[#2d2d2d]"
                   >
-                    Code
-                    <ArrowUpRight size={16} />
+                    Github
+                    <GithubLogo size={16} />
                   </a>
+                )}
+                {project.designUrl && (
+                  <a
+                    href={project.designUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-2 text-[#6b6b6b] hover:text-[#2d2d2d]"
+                  >
+                    Design File
+                    <FigmaLogo size={16} />
+                  </a>
+                )}
                 </div>
               </article>
             ))}

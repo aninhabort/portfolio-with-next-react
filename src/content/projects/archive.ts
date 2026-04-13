@@ -21,16 +21,16 @@ export interface ProjectArchiveEntry {
   codeUrl?: string;
 }
 
-export const PROJECT_FILTERS = ["All", "Product Design", "Branding", "Web Apps", "Mobile", "APIs"];
+export const PROJECT_FILTERS = ["All", "Product Design", "Branding", "Landing Pages", "Web Apps", "Mobile", "APIs"];
 
 export const PROJECT_ARCHIVE: ProjectArchiveEntry[] = [
   {
-    title: "Velotra — Logistics Landing Page Design (Hero Section)",
+    title: "Velotra: Logistics Landing Page Design (Hero Section)",
     description:
       "A landing page design for a logistics company, featuring a clean and modern aesthetic with a focus on clear information hierarchy and user engagement.",
-    tags: ["Logistics", "Landing Page", "UI/UX", "Branding", "Figma"],
-    category: "Branding",
-    designUrl: "https://www.figma.com/community/file/1615437539529694523/velotra-logistics-landing-page-design-hero-section?q_id=db66195e-8455-4fa3-b9d2-be734fabbca2",
+    tags: ["Landing Page", "UI/UX", "Branding", "Figma"],
+    category: "Landing Pages",
+    designUrl: "https://www.figma.com/community/file/1615437539529694523",
     previewImage: velotraLandingPagePreview,
   },
   {
