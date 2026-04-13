@@ -405,7 +405,7 @@ export default function Page() {
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full rounded-2xl border border-black/10 bg-[#eae6e2] px-4 py-3 text-[#2d2d2d] placeholder:text-[#6b6b6b] focus:border-black/30 focus:outline-none"
-                  placeholder="Ana Carolina"
+                  placeholder="John Doe"
                 />
               </label>
               <label className="flex flex-col gap-2 text-sm font-semibold">
@@ -416,7 +416,7 @@ export default function Page() {
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full rounded-2xl border border-black/10 bg-[#eae6e2] px-4 py-3 text-[#2d2d2d] placeholder:text-[#6b6b6b] focus:border-black/30 focus:outline-none"
-                  placeholder="hello@anacarolina.dev"
+                  placeholder="hello@johndoe.com"
                 />
               </label>
             </div>
@@ -428,7 +428,7 @@ export default function Page() {
                 value={formData.subject}
                 onChange={handleChange}
                 className="w-full rounded-2xl border border-black/10 bg-[#eae6e2] px-4 py-3 text-[#2d2d2d] placeholder:text-[#6b6b6b] focus:border-black/30 focus:outline-none"
-                placeholder="Let&apos;s build something"
+                placeholder="Let's build something"
               />
             </label>
             <label className="flex flex-col gap-2 text-sm font-semibold">
