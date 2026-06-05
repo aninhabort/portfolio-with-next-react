@@ -1,12 +1,18 @@
 import { ComponentType } from "react";
 import {
   IconProps,
-  DribbbleLogo,
-  FigmaLogo,
-  GithubLogo,
-  InstagramLogo,
-  LinkedinLogo,
-  MediumLogo,
+  DribbbleLogoIcon,
+  FigmaLogoIcon,
+  GithubLogoIcon,
+  InstagramLogoIcon,
+  LinkedinLogoIcon,
+  MediumLogoIcon,
+  PenNib,
+  Layout,
+  DeviceMobile,
+  Stack,
+  Browser,
+  Code,
 } from "@phosphor-icons/react";
 import { PROJECT_ARCHIVE, ProjectArchiveEntry } from "@/content/projects/archive";
 
@@ -30,17 +36,32 @@ export interface SocialLink {
   icon: ComponentType<IconProps>;
 }
 
+export interface ServiceItem {
+  title: string;
+  description: string;
+  icon: ComponentType<IconProps>;
+}
+
+export interface BuildingItem {
+  name: string;
+  description: string;
+  status: "Active" | "In Development";
+  category: string;
+  tags: string[];
+  href?: string;
+}
+
 const SKILLS = [
-  "Figma",
   "Product Design",
   "UX/UI Design",
+  "Figma",
   "Design Systems",
+  "Branding",
+  "Content Creation",
   "React",
   "TypeScript",
-  "Vue.js",
   "Next.js",
   "Tailwind CSS",
-  "Responsive Design",
 ];
 
 const CONTACT_INFO = {
@@ -58,32 +79,32 @@ type SocialDirectoryItem = {
 const SOCIAL_DIRECTORY: SocialDirectoryItem[] = [
   {
     href: "https://www.linkedin.com/in/anabmagalhaes/",
-    icon: LinkedinLogo,
+    icon: LinkedinLogoIcon,
     label: "LinkedIn",
   },
   {
     href: "https://github.com/aninhabort",
-    icon: GithubLogo,
+    icon: GithubLogoIcon,
     label: "GitHub",
   },
   {
     href: "https://dribbble.com/aninhabort",
-    icon: DribbbleLogo,
+    icon: DribbbleLogoIcon,
     label: "Dribbble",
   },
   {
     href: "https://www.figma.com/@anabmagalhaes",
-    icon: FigmaLogo,
+    icon: FigmaLogoIcon,
     label: "Figma",
   },
   {
     href: "https://medium.com/@aninhabort",
-    icon: MediumLogo,
+    icon: MediumLogoIcon,
     label: "Medium",
   },
   {
     href: "https://www.instagram.com/neo.coders/",
-    icon: InstagramLogo,
+    icon: InstagramLogoIcon,
     label: "Instagram",
   },
 ];
@@ -91,26 +112,34 @@ const SOCIAL_DIRECTORY: SocialDirectoryItem[] = [
 export const NAV_LINKS: NavLink[] = [
   { href: "/", label: "Home" },
   { href: "#projects", label: "Projects" },
-  { href: "#expertise", label: "Skills" },
+  { href: "#services", label: "Services" },
   { href: "#content", label: "Content" },
   { href: "#contact", label: "Contact" },
 ];
 
-export const FEATURED_PROJECTS: ProjectArchiveEntry[] = PROJECT_ARCHIVE.map((project) => ({
-  title: project.title,
-  category: project.category,
-  description: project.description,
-  tags: project.tags,
-  designUrl: project.designUrl,
-  liveUrl: project.liveUrl,
-  codeUrl: project.codeUrl,
-  gradient: project.gradient ?? "from-[#d7d2cd] via-[#ece8e4] to-[#f5f3f1]",
-  previewImage: project.previewImage,
-})).slice(0, 3);
+export const FEATURED_PROJECTS: ProjectArchiveEntry[] = PROJECT_ARCHIVE
+  .filter((project) => project.featured)
+  .map((project) => ({
+    title: project.title,
+    category: project.category,
+    description: project.description,
+    tags: project.tags,
+    featured: project.featured,
+    designUrl: project.designUrl,
+    liveUrl: project.liveUrl,
+    codeUrl: project.codeUrl,
+    gradient: project.gradient ?? "from-[#d7d2cd] via-[#ece8e4] to-[#f5f3f1]",
+    previewImage: project.previewImage,
+    instagram: project.instagram,
+  }));
+
+const designProjectCount = PROJECT_ARCHIVE.filter((p) =>
+  ["Product Design", "Branding", "Landing Pages", "Mobile"].includes(p.category)
+).length;
 
 export const HERO_STATS = [
   { label: "Years Building", value: "02" },
-  { label: "Projects", value: String(PROJECT_ARCHIVE.length).padStart(2, "0") },
+  { label: "Design Projects", value: String(designProjectCount).padStart(2, "0") },
 ];
 
 export const EXPERTISE = SKILLS;
@@ -121,19 +150,74 @@ const dribbbleLink = SOCIAL_DIRECTORY.find((link) => link.label === "Dribbble");
 export const CONTENT_CARDS: ContentCard[] = [
   {
     title: "Neo Coders",
-    description: "Bite-sized tutorials, technical deep dives, and practical insights focused on software engineering.",
+    description:
+      "A content brand I built around software development and product design. Bite-sized insights, tutorials, and behind-the-scenes of building digital products.",
     handle: "@neo.coders",
     href: instagramLink?.href ?? "https://www.instagram.com/neo.coders/",
     accent: "border-black/10 hover:border-black/20",
-    icon: instagramLink?.icon ?? InstagramLogo,
+    icon: instagramLink?.icon ?? InstagramLogoIcon,
   },
   {
     title: "Design Iterations",
-    description: "UI design case studies for web and mobile, motion prototypes, and visual explorations straight from my Figma files.",
+    description:
+      "UI case studies, DailyUI challenges, and visual explorations: from product screens to branding systems, straight from my Figma files.",
     handle: "@aninhabort",
     href: dribbbleLink?.href ?? "https://dribbble.com/aninhabort",
     accent: "border-black/10 hover:border-black/20",
-    icon: dribbbleLink?.icon ?? DribbbleLogo,
+    icon: dribbbleLink?.icon ?? DribbbleLogoIcon,
+  },
+];
+
+export const HOW_I_CAN_HELP: ServiceItem[] = [
+  {
+    title: "Product Design",
+    description: "End-to-end product design from early research and wireframes to high-fidelity prototypes.",
+    icon: PenNib,
+  },
+  {
+    title: "UI Design",
+    description: "Clean, functional interfaces that balance visual quality with usability and accessibility.",
+    icon: Layout,
+  },
+  {
+    title: "Mobile App Design",
+    description: "Intuitive mobile experiences designed for iOS and Android, from flows to polished screens.",
+    icon: DeviceMobile,
+  },
+  {
+    title: "Design Systems",
+    description: "Scalable component libraries and design tokens that keep products and teams consistent.",
+    icon: Stack,
+  },
+  {
+    title: "Landing Pages",
+    description: "Visually compelling pages that communicate your brand story and convert visitors.",
+    icon: Browser,
+  },
+  {
+    title: "Frontend Development",
+    description: "Bringing designs to life with React, Next.js, and modern CSS, so nothing gets lost in translation.",
+    icon: Code,
+  },
+];
+
+export const CURRENTLY_BUILDING: BuildingItem[] = [
+  {
+    name: "Memory Stamp",
+    description:
+      "A mobile app designed to help people preserve memories, stories, and meaningful moments across generations. Focused on emotional UX and gentle interaction design.",
+    status: "In Development",
+    category: "Mobile App",
+    tags: ["Mobile Design", "Product Design", "UX Research"],
+  },
+  {
+    name: "Neo Coders",
+    description:
+      "A technology-focused content brand creating educational content about software development, product design, and tech culture, growing a community across Instagram, Threads, and LinkedIn.",
+    status: "Active",
+    category: "Content Brand",
+    tags: ["Branding", "Content Creation", "Community"],
+    href: "https://www.instagram.com/neo.coders/",
   },
 ];
 
@@ -144,8 +228,10 @@ export const CONTACT_SUMMARY = {
 
 const SOCIAL_LABELS = new Set(["LinkedIn", "GitHub", "Dribbble", "Figma", "Medium"]);
 
-export const SOCIALS: SocialLink[] = SOCIAL_DIRECTORY.filter((link) => SOCIAL_LABELS.has(link.label)).map((link) => ({
-  href: link.href,
-  label: link.label,
-  icon: link.icon,
-}));
+export const SOCIALS: SocialLink[] = SOCIAL_DIRECTORY
+  .filter((link) => SOCIAL_LABELS.has(link.label))
+  .map((link) => ({
+    href: link.href,
+    label: link.label,
+    icon: link.icon,
+  }));

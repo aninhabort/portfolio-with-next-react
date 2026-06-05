@@ -4,16 +4,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { ArrowUpRight, EnvelopeSimple, MapPin } from "@phosphor-icons/react";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { ProjectCard } from "@/components/ProjectCard";
 import {
-  CONTENT_CARDS,
   CONTACT_SUMMARY,
+  CONTENT_CARDS,
+  CURRENTLY_BUILDING,
   EXPERTISE,
   FEATURED_PROJECTS,
   HERO_STATS,
+  HOW_I_CAN_HELP,
   NAV_LINKS,
   SOCIALS,
 } from "@/content/home/data";
-import { FigmaLogo, GithubLogo } from "phosphor-react";
 
 type FormStatus = "idle" | "loading" | "success" | "error" | "empty";
 
@@ -72,58 +76,11 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-transparent text-[#2d2d2d]">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-[#f5f3f1]/90 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-black/5 text-xl font-semibold text-[#2d2d2d]">
-              AM
-            </div>
-            <span className="text-lg font-semibold tracking-[0.2em] text-[#2d2d2d]">
-              ANA.
-            </span>
-          </div>
-
-          <nav className="hidden gap-8 text-sm font-medium uppercase tracking-[0.2em] text-[#6b6b6b] md:flex">
-            {NAV_LINKS.map((link) =>
-              link.href.startsWith("#") ? (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="transition-colors hover:text-[#1a1a1a]"
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="transition-colors hover:text-[#1a1a1a]"
-                >
-                  {link.label}
-                </Link>
-              ),
-            )}
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <div className="hidden h-11 w-11 items-center justify-center rounded-full border border-black/10 md:flex">
-              <Image
-                src="/profile.png"
-                width={40}
-                height={40}
-                className="rounded-full object-cover"
-                alt="Portrait of Ana Carolina"
-              />
-            </div>
-            <Link
-              href="#contact"
-              className="rounded-full bg-[#1a1a1a] px-5 py-2 text-sm font-semibold text-[#f5f3f1] transition hover:bg-[#2d2d2d]"
-            >
-              Get in Touch
-            </Link>
-          </div>
-        </div>
-      </header>
+      <Header
+        navLinks={NAV_LINKS}
+        cta={{ label: "Get in Touch", href: "#contact" }}
+        showAvatar
+      />
 
       <main className="mx-auto flex max-w-[1200px] flex-col gap-24 px-6 pb-24 pt-32">
         <section id="hero" className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr]">
@@ -133,13 +90,13 @@ export default function Page() {
             </span>
             <div>
               <p className="text-sm uppercase tracking-[0.6em] text-[#6b6b6b]">
-                Product Designer & Frontend Developer
+                Product Designer & Content Creator
               </p>
               <h1 className="mt-4 text-5xl font-bold leading-tight text-[#2d2d2d] sm:text-6xl">
                 Ana Carolina <span className="text-[#1a1a1a]">Magalhães</span>
               </h1>
               <p className="mt-6 text-lg text-[#6b6b6b]">
-                I&apos;m a Product Designer with a background in Architecture and experience in Frontend Development. I bridge the gap between design and code, creating functional and beautiful interfaces that are built to work.
+                I design digital products that feel effortless to use. With a background in Frontend Development, I bring ideas from concept to screen and create content to make technology accessible to everyone.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -150,13 +107,6 @@ export default function Page() {
                 Explore Projects
                 <ArrowUpRight size={18} />
               </Link>
-              {/* <Link
-                href="#content"
-                className="flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-cyan-300 hover:text-cyan-300"
-              >
-                View Roadmap
-                <ArrowUpRight size={18} />
-              </Link> */}
             </div>
             <div className="grid gap-6 sm:grid-cols-3">
               {HERO_STATS.map((stat) => (
@@ -174,15 +124,15 @@ export default function Page() {
             <div className="relative flex h-full flex-col justify-between rounded-[20px] border border-black/5 bg-[#ece8e4] p-6">
               <div>
                 <p className="text-sm uppercase tracking-[0.4em] text-[#6b6b6b]">Currently crafting</p>
-                <h3 className="mt-2 text-2xl font-semibold text-[#2d2d2d]">User-centered digital products</h3>
+                <h3 className="mt-2 text-2xl font-semibold text-[#2d2d2d]">Digital products & content</h3>
                 <p className="mt-3 text-sm text-[#6b6b6b]">
-                  Bridging the gap between design and code to build scalable digital products.
+                  Designing experiences that feel human, and content that makes technology approachable.
                 </p>
               </div>
               <div className="relative mt-10 overflow-hidden rounded-2xl border border-black/10 bg-[#e2ddd8] p-4 shadow-sm">
                 <Image
                   src="/profile.png"
-                  alt="Ana coding on a laptop"
+                  alt="Ana Carolina"
                   width={420}
                   height={320}
                   className="relative mx-auto rounded-xl object-cover"
@@ -198,86 +148,21 @@ export default function Page() {
               <p className="text-sm uppercase tracking-[0.4em] text-[#6b6b6b]">Featured</p>
               <h2 className="mt-2 text-4xl font-semibold text-[#2d2d2d]">Selected Projects</h2>
               <p className="mt-2 text-[#6b6b6b]">
-                Selected web applications and open-source contributions designed for performance, scale, and user delight.
+                A curated selection of product design, branding, and digital experiences that represent my current work.
               </p>
             </div>
             <Link
               href="/projects"
               className="flex items-center gap-2 rounded-full border border-black/10 px-5 py-2 text-sm font-semibold text-[#2d2d2d] transition hover:border-black/30 hover:text-[#1a1a1a]"
             >
-              Explore Projects
+              View All Projects
               <ArrowUpRight size={18} />
             </Link>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
             {FEATURED_PROJECTS.map((project) => (
-              <article
-                key={project.title}
-                className="group relative flex h-full flex-col rounded-3xl border border-black/5 bg-[#f5f3f1] p-6 shadow-sm transition hover:-translate-y-1 hover:border-black/20"
-              >
-                <div className="relative mb-6 h-36 overflow-hidden rounded-2xl border border-black/10">
-                  {project.previewImage ? (
-                    <Image
-                      src={project.previewImage}
-                      alt={`${project.title} live preview`}
-                      fill
-                      sizes="(min-width: 768px) 320px, 100vw"
-                      className="object-cover"
-                    />
-                  ) : (
-                    <div className={`h-full w-full bg-gradient-to-br ${project.gradient}`}></div>
-                  )}
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full bg-black/[0.03] px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-[#6b6b6b]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-                <h3 className="mt-5 mb-1 text-2xl font-semibold text-[#2d2d2d]">{project.title}</h3>
-                <p className="text-xs uppercase tracking-[0.4em] text-[#6b6b6b]">{project.category}</p>
-                <p className="mt-3 text-sm text-[#6b6b6b]">{project.description}</p>
-                <div className="mt-auto pt-5 flex flex-wrap items-center gap-4 text-sm font-semibold">
-                  {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-2 text-[#1a1a1a] hover:text-[#2d2d2d]"
-                  >
-                    Live Demo
-                    <ArrowUpRight size={16} />
-                  </a>
-                )}
-                {project.codeUrl && (
-                  <a
-                    href={project.codeUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-2 text-[#6b6b6b] hover:text-[#2d2d2d]"
-                  >
-                    Github
-                    <GithubLogo size={16} />
-                  </a>
-                )}
-                {project.designUrl && (
-                  <a
-                    href={project.designUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-2 text-[#6b6b6b] hover:text-[#2d2d2d]"
-                  >
-                    Design File
-                    <FigmaLogo size={16} />
-                  </a>
-                )}
-                </div>
-              </article>
+              <ProjectCard key={project.title} project={project} />
             ))}
           </div>
         </section>
@@ -287,7 +172,7 @@ export default function Page() {
             <p className="text-sm uppercase tracking-[0.4em] text-[#6b6b6b]">Toolkit</p>
             <h2 className="mt-2 text-4xl font-semibold text-[#2d2d2d]">Expertise</h2>
             <p className="mt-2 text-[#6b6b6b]">
-              Continuously evolving skill set focused on performance, accessibility, and storytelling across mediums.
+              Continuously evolving skill set focused on design quality, product thinking, and storytelling.
             </p>
           </div>
           <div className="flex flex-wrap gap-4">
@@ -302,12 +187,93 @@ export default function Page() {
           </div>
         </section>
 
+        <section id="services" className="space-y-8 scroll-mt-32">
+          <div>
+            <p className="text-sm uppercase tracking-[0.4em] text-[#6b6b6b]">Services</p>
+            <h2 className="mt-2 text-4xl font-semibold text-[#2d2d2d]">How I Can Help</h2>
+            <p className="mt-2 text-[#6b6b6b]">
+              From early-stage product thinking to polished interfaces and working code.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {HOW_I_CAN_HELP.map(({ title, description, icon: Icon }) => (
+              <div
+                key={title}
+                className="flex flex-col gap-3 rounded-3xl border border-black/5 bg-[#f5f3f1] p-6"
+              >
+                <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-black/[0.05] text-[#2d2d2d]">
+                  <Icon size={20} />
+                </div>
+                <h3 className="font-semibold text-[#2d2d2d]">{title}</h3>
+                <p className="text-sm text-[#6b6b6b]">{description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="building" className="space-y-8 scroll-mt-32">
+          <div>
+            <p className="text-sm uppercase tracking-[0.4em] text-[#6b6b6b]">Work in Progress</p>
+            <h2 className="mt-2 text-4xl font-semibold text-[#2d2d2d]">Currently Building</h2>
+            <p className="mt-2 text-[#6b6b6b]">
+              Projects I&apos;m actively designing and building right now.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {CURRENTLY_BUILDING.map((item) => (
+              <div
+                key={item.name}
+                className="flex flex-col gap-4 rounded-3xl border border-black/5 bg-[#f5f3f1] p-6 shadow-sm"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="rounded-full border border-black/10 bg-black/[0.03] px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-[#6b6b6b]">
+                    {item.category}
+                  </span>
+                  <span className="flex items-center gap-1.5 text-xs font-semibold text-[#6b6b6b]">
+                    <span
+                      className={`h-1.5 w-1.5 rounded-full ${
+                        item.status === "Active" ? "bg-green-500" : "bg-amber-400"
+                      }`}
+                    />
+                    {item.status}
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold text-[#2d2d2d]">{item.name}</h3>
+                  <p className="mt-2 text-sm text-[#6b6b6b]">{item.description}</p>
+                </div>
+                <div className="mt-auto flex flex-wrap gap-2">
+                  {item.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-black/[0.03] px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-[#6b6b6b]"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                {item.href && (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-2 text-sm font-semibold text-[#1a1a1a] hover:text-[#2d2d2d]"
+                  >
+                    Visit {item.name}
+                    <ArrowUpRight size={16} />
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section id="content" className="space-y-8 scroll-mt-32">
           <div>
             <p className="text-sm uppercase tracking-[0.4em] text-[#6b6b6b]">Storytelling</p>
             <h2 className="mt-2 text-4xl font-semibold text-[#2d2d2d]">Beyond Code</h2>
             <p className="mt-2 text-[#6b6b6b]">
-              My creative process bridges the gap between logic and aesthetics. I use Instagram to share software engineering insights and development fundamentals, while reserving Dribbble to showcase UI design for web and mobile, alongside broader visual explorations.
+              My creative process lives at the intersection of design and technology. I share product design insights on Dribbble and build a community around software and design culture through Neo Coders.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
@@ -339,7 +305,7 @@ export default function Page() {
               Start a Conversation
             </h2>
             <p className="text-[#6b6b6b]">
-              Have a project in mind or want to collaborate on content? Drop me a message and let&apos;s build something extraordinary.
+              Have a product to design or a collaboration in mind? Drop me a message and let&apos;s build something extraordinary.
             </p>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
@@ -453,14 +419,7 @@ export default function Page() {
         </section>
       </main>
 
-      <footer className="border-t border-black/5 bg-[#f5f3f1]/70">
-        <div className="mx-auto flex max-w-[1200px] flex-col gap-4 px-6 py-6 text-xs text-[#6b6b6b] sm:flex-row sm:items-center sm:justify-between">
-          <p>© Ana Carolina B. de Magalhães · {new Date().getFullYear()}</p>
-          <div className="flex items-center gap-3 text-[#6b6b6b]">
-            <span>Built with React & Passion</span>
-          </div>
-        </div>
-      </footer>
+      <Footer tagline="Built with React & Passion" />
     </div>
   );
 }
