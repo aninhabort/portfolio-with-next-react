@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import { Metadata } from "next/dist/types";
 import { Space_Grotesk, Sora } from "next/font/google";
 import "./global.css";
@@ -32,6 +33,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
