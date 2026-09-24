@@ -187,17 +187,6 @@ export const PROJECT_ARCHIVE: ProjectArchiveEntry[] = [
     previewImage: "/assets/velotra-landing-page.png",
   },
   {
-    title: "Pokedex",
-    description:
-      "A full Product Design case study: a complex Figma Design System translated into a high-performance React application.",
-    tags: ["Figma", "Design System", "React", "Styled Components"],
-    category: "Product Design",
-    designUrl: "https://www.figma.com/community/file/1480973290003426198",
-    previewImage: "/assets/pokedex.png",
-    liveUrl: "https://ana-pokedex.netlify.app/",
-    codeUrl: "https://github.com/aninhabort/pokedex",
-  },
-  {
     title: "To-Do List App",
     description:
       "A minimal iOS task manager designed for focus. Clean interfaces and intuitive gestures to make organizing tasks feel effortless.",
