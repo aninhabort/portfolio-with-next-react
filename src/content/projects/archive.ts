@@ -23,6 +23,15 @@ export const PROJECTS_NAV_LINKS = [
 
 export const PROJECT_ARCHIVE: ProjectArchiveEntry[] = [
   {
+    title: "ARC Journal",
+    description:
+      "A cozy reading journal for ARC reviewers to track Advanced Reader Copies, including deadlines, reviews, platforms, and notes, with a free account and secure cloud sync.",
+    tags: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
+    category: "Web Apps",
+    previewImage: "/assets/arc-journal.png",
+    liveUrl: "https://arcjournal.site/",
+  },
+  {
     title: "Artisan Handmade Shop",
     description:
       "An online shop concept for artisan goods, with a focus on product photography, storytelling, and a handcrafted visual language.",
